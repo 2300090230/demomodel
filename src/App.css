@@ -1,3 +1,41 @@
+/* Remove .pm-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--gov-orange);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pm-logo::before {
+  content: "🇮🇳";
+  font-size: 1.8rem;
+}*/
+* {
+  cursor: default;
+}
+
+button, a, input, [role="button"] {
+  cursor: pointer;
+}
+
+/* PM Internship Logo - myScheme.gov.in inspired */
+.pm-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF6B35;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pm-logo::before {
+  content: "🇮�";
+  font-size: 1.8rem;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

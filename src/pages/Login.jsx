@@ -14,25 +14,61 @@ export default function Login() {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white shadow-md rounded p-6">
-      <h2 className="text-xl font-bold mb-4">Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <input
-          type="email"
-          placeholder="Email"
-          className="border p-2 w-full"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="border p-2 w-full"
-          value={form.password}
-          onChange={(e) => setForm({ ...form, password: e.target.value })}
-        />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded">Login</button>
-      </form>
+    <div className="max-w-md mx-auto">
+      <div className="bg-white shadow-xl rounded-xl p-8 border-t-4 border-gov-orange">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gov-blue mb-2">Welcome Back</h2>
+          <p className="text-gov-gray-500">Sign in to your account</p>
+        </div>
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gov-gray-700 mb-2">
+              Email Address
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              className="w-full px-4 py-3 border border-gov-gray-300 rounded-lg focus:ring-2 focus:ring-gov-orange focus:border-gov-orange transition-colors duration-200 placeholder-gov-gray-400"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              required
+            />
+          </div>
+          
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gov-gray-700 mb-2">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              className="w-full px-4 py-3 border border-gov-gray-300 rounded-lg focus:ring-2 focus:ring-gov-orange focus:border-gov-orange transition-colors duration-200 placeholder-gov-gray-400"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              required
+            />
+          </div>
+          
+          <button 
+            type="submit"
+            className="w-full bg-gov-blue hover:bg-gov-blue-dark text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gov-blue focus:ring-offset-2"
+          >
+            Sign In
+          </button>
+        </form>
+        
+        <div className="mt-6 text-center">
+          <p className="text-gov-gray-500">
+            Don't have an account?{' '}
+            <a href="/register" className="text-gov-orange hover:text-gov-orange-dark font-medium transition-colors duration-200">
+              Sign up here
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

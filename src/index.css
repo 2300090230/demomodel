@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+/* Custom CSS variables for myScheme.gov.in theme */
+:root {
+  --gov-orange: #FF6B35;
+  --gov-orange-light: #FF8A5B;
+  --gov-orange-dark: #E55A2B;
+  --gov-blue: #1E3A8A;
+  --gov-blue-light: #2563EB;
+  --gov-blue-dark: #1E40AF;
+  --gov-green: #16A34A;
+  --gov-green-light: #22C55E;
+  --gov-green-dark: #15803D;
+  --gov-red: #DC2626;
+  --gov-red-light: #EF4444;
+  --gov-red-dark: #B91C1C;
+  --gov-gray-50: #F9FAFB;
+  --gov-gray-100: #F3F4F6;
+  --gov-gray-200: #E5E7EB;
+  --gov-gray-300: #D1D5DB;
+  --gov-gray-400: #9CA3AF;
+  --gov-gray-500: #6B7280;
+  --gov-gray-600: #4B5563;
+  --gov-gray-700: #374151;
+  --gov-gray-800: #1F2937;
+  --gov-gray-900: #111827;
+}
+
+/* myScheme.gov.in Theme Utility Classes */
+.bg-gov-blue { background-color: var(--gov-blue); }
+.bg-gov-orange { background-color: var(--gov-orange); }
+.bg-gov-orange-dark { background-color: var(--gov-orange-dark); }
+.bg-gov-green { background-color: var(--gov-green); }
+.bg-gov-green-dark { background-color: var(--gov-green-dark); }
+.bg-gov-red { background-color: var(--gov-red); }
+.bg-gov-red-dark { background-color: var(--gov-red-dark); }
+.bg-gov-gray-100 { background-color: var(--gov-gray-100); }
+.bg-gov-gray-200 { background-color: var(--gov-gray-200); }
+.bg-gov-gray-300 { background-color: var(--gov-gray-300); }
+
+.text-gov-blue { color: var(--gov-blue); }
+.text-gov-orange { color: var(--gov-orange); }
+.text-gov-orange-dark { color: var(--gov-orange-dark); }
+.text-gov-green { color: var(--gov-green); }
+.text-gov-red { color: var(--gov-red); }
+.text-gov-gray-500 { color: var(--gov-gray-500); }
+.text-gov-gray-600 { color: var(--gov-gray-600); }
+.text-gov-gray-700 { color: var(--gov-gray-700); }
+.text-gov-gray-900 { color: var(--gov-gray-900); }
+
+.border-gov-orange { border-color: var(--gov-orange); }
+.border-gov-gray-200 { border-color: var(--gov-gray-200); }
+.border-gov-gray-300 { border-color: var(--gov-gray-300); }
+
+.border-t-gov-orange { border-top-color: var(--gov-orange); }
+
+.hover\:bg-gov-orange-dark:hover { background-color: var(--gov-orange-dark); }
+.hover\:bg-gov-blue-dark:hover { background-color: var(--gov-blue-dark); }
+.hover\:bg-gov-red-dark:hover { background-color: var(--gov-red-dark); }
+.hover\:bg-gov-green-dark:hover { background-color: var(--gov-green-dark); }
+.hover\:text-gov-orange:hover { color: var(--gov-orange); }
+
+.focus\:ring-gov-orange:focus { --tw-ring-color: var(--gov-orange); }
+.focus\:ring-gov-blue:focus { --tw-ring-color: var(--gov-blue); }
+.focus\:ring-gov-green:focus { --tw-ring-color: var(--gov-green); }
+
+.focus\:border-gov-orange:focus { border-color: var(--gov-orange); }
