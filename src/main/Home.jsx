@@ -1,107 +1,162 @@
 import React from "react";
 
-const styles = {
-  page: {
-    fontFamily: "Segoe UI, Arial, sans-serif",
-    background: "#f5f7fa",
-    minHeight: "100vh",
-    margin: 0,
-    padding: 0,
-  },
-  header: {
-    background: "#2563eb",
-    color: "#fff",
-    padding: "24px 0 16px 0",
-    textAlign: "center",
-    fontWeight: 700,
-    fontSize: "2.5rem",
-    letterSpacing: "1px",
-    borderBottom: "4px solid #1e40af",
-  },
-  nav: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "32px",
-    background: "#2563eb",
-    padding: "12px 0",
-    fontSize: "1.1rem",
-    fontWeight: 500,
-    borderBottom: "2px solid #1e40af",
-  },
-  navLink: {
-    color: "#fff",
-    textDecoration: "none",
-    transition: "color 0.2s",
-  },
-  container: {
-    maxWidth: "900px",
-    margin: "32px auto",
-    background: "#e8f0fe",
-    borderRadius: "12px",
-    boxShadow: "0 2px 12px rgba(30,64,175,0.08)",
-    padding: "32px 36px",
-  },
-  sectionTitle: {
-    color: "#2563eb",
-    fontWeight: 700,
-    fontSize: "2rem",
-    marginBottom: "12px",
-  },
-  quote: {
-    fontStyle: "italic",
-    color: "#222",
-    margin: "18px 0 8px 0",
-    fontSize: "1.1rem",
-  },
-  quoteAuthor: {
-    textAlign: "right",
-    fontWeight: 500,
-    color: "#1e40af",
-    marginBottom: "24px",
-  },
-  featuresList: {
-    margin: "16px 0 24px 0",
-    paddingLeft: "0",
-    listStyle: "none",
-  },
-  featureItem: {
-    display: "flex",
-    alignItems: "center",
-    fontSize: "1.08rem",
-    marginBottom: "10px",
-  },
-  check: {
-    color: "#22c55e",
-    fontSize: "1.3rem",
-    marginRight: "10px",
-  },
-  table: {
-    width: "100%",
-    borderCollapse: "collapse",
-    background: "#fff",
-    margin: "24px 0",
-    borderRadius: "8px",
-    overflow: "hidden",
-    boxShadow: "0 1px 4px rgba(30,64,175,0.07)",
-  },
-  th: {
-    background: "#2563eb",
-    color: "#fff",
-    padding: "10px 8px",
-    textAlign: "left",
-    fontWeight: 600,
-    fontSize: "1rem",
-  },
-  td: {
-    padding: "10px 8px",
-    borderBottom: "1px solid #e5e7eb",
-    fontSize: "1rem",
-  },
-  highlight: {
-    color: "#2563eb",
-    fontWeight: 600,
-  },
-};
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gov-blue mb-8">
+              PM Internship Scheme
+            </h1>
+            
+            <div className="max-w-4xl mx-auto mb-12">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                <span className="font-semibold text-gray-900">PM Internship Scheme</span> is a remarkable initiative launched by the <span className="font-semibold text-gray-900">Indian government</span>, designed to provide valuable internship opportunities for the youth of India. The program, part of the larger vision for skill development and employment, aims to <span className="font-semibold text-gray-900">bridge the gap between academic learning and real-world experience</span> by offering internships across the <span className="font-semibold text-gray-900">top 500 companies</span>. This initiative <span className="italic">not only</span> gives interns <span className="font-semibold text-gray-900">hands-on experience</span> in their fields <span className="italic">but also</span> equips them with the <span className="font-semibold text-gray-900">skills</span> and <span className="font-semibold text-gray-900">insights</span> needed to build successful careers in the public sector.
+              </p>
+            </div>
+
+            {/* Quote Section */}
+            <div className="bg-gray-100 rounded-lg p-8 mb-12 max-w-4xl mx-auto">
+              <blockquote className="text-lg md:text-xl font-medium text-gray-900 mb-4">
+                "Skill development and employment are crucial needs in India. Our government is consistently working in this direction."
+              </blockquote>
+              <cite className="text-gov-blue font-semibold text-right block">
+                — Prime Minister Narendra Modi
+              </cite>
+            </div>
+
+            {/* Program Details */}
+            <div className="max-w-4xl mx-auto text-left">
+              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                <span className="font-semibold text-gray-900">PM Internship Scheme</span>, launched by Union Finance Minister Nirmala Sitharaman, aims to provide young individuals <span className="font-semibold text-gray-900">aged 21-24</span> years from low-income households with <span className="font-semibold text-gray-900">12-month</span> internship opportunities in the country's top <span className="font-semibold text-gray-900">500 companies</span>. The pilot phase targets <span className="font-semibold text-gray-900">1.25 lakh</span> youth, with a <span className="font-semibold text-gray-900">five-year</span> goal to facilitate internships for <span className="font-semibold text-gray-900">one crore</span> young individuals. This initiative is not just about internships; it's about building a future where every youth has the chance to succeed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Decorative Indian Architecture Section */}
+      <section className="bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center space-x-8">
+            {/* Left Design Element */}
+            <div className="hidden md:block">
+              <div className="w-24 h-24 rounded-full border-4 border-white bg-blue-900 flex items-center justify-center">
+                <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Government Emblem */}
+            <div className="text-center">
+              <div className="w-32 h-32 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <div className="text-gov-blue font-bold text-2xl">
+                  <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7V10C2 16 6.2 21.05 12 22C17.8 21.05 22 16 22 10V7L12 2Z" />
+                  </svg>
+                </div>
+              </div>
+              <h2 className="text-white text-2xl font-bold">PM INTERNSHIP HUB</h2>
+            </div>
+
+            {/* Right Design Element */}
+            <div className="hidden md:block">
+              <div className="w-24 h-24 rounded-full border-4 border-white bg-green-700 flex items-center justify-center">
+                <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-gov-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Top 500 Companies</h3>
+              <p className="text-gray-600">Gain experience with India's leading corporations and organizations</p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-gov-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">1 Crore Youth Target</h3>
+              <p className="text-gray-600">Empowering millions of young Indians with practical work experience</p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="text-center p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-gov-green rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">12-Month Program</h3>
+              <p className="text-gray-600">Comprehensive year-long internship for complete skill development</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="bg-gray-100 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-gov-blue mb-2">500</div>
+              <div className="text-gray-600">Partner Companies</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-gov-orange mb-2">1.25L</div>
+              <div className="text-gray-600">Initial Target</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-gov-green mb-2">1Cr</div>
+              <div className="text-gray-600">Five-Year Goal</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-gov-blue mb-2">12</div>
+              <div className="text-gray-600">Months Duration</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gov-blue py-16">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Journey?</h2>
+          <p className="text-xl text-blue-100 mb-8">Join thousands of young Indians building their careers through PM Internship Scheme</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-gov-orange hover:bg-gov-orange-dark text-white font-semibold py-4 px-8 rounded-lg transition-colors shadow-lg">
+              Apply for Internship
+            </button>
+            <button className="border-2 border-white text-white hover:bg-white hover:text-gov-blue font-semibold py-4 px-8 rounded-lg transition-colors">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
 
 function MainHome() {
   return (
@@ -206,5 +261,3 @@ function MainHome() {
     </div>
   );
 }
-
-export default MainHome;

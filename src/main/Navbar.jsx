@@ -1,61 +1,25 @@
-import React from "react";
-import { Link, Route, Routes, useLocation } from "react-router-dom";
-
-const navStyle = {
-  display: "flex",
-  justifyContent: "center",
-  gap: "32px",
-  background: "#2563eb",
-  padding: "14px 0",
-  fontSize: "1.1rem",
-  fontWeight: 500,
-  borderBottom: "2px solid #1e40af",
-};
-
-const linkStyle = (active) => ({
-  color: active ? "#facc15" : "#fff",
-  textDecoration: "none",
-  transition: "color 0.2s",
-  padding: "6px 14px",
-  borderRadius: "4px",
-  background: active ? "#1e40af" : "transparent",
-});
-
-function MainNavbar() {
-  const location = useLocation();
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Header from '../components/Header'
+import Home from './Home'
+import Registration from './Registration'
+import Login from './Login'
+import Opportunities from './Opportunities'
+import News from './News'
+import PartnerCompanies from './PartnerCompanies'
+export default function Navbar() {
   return (
-    <nav style={navStyle}>
-      <Link to="/" style={linkStyle(location.pathname === "/")}>
-        Home
-      </Link>
-      <Link
-        to="/registration"
-        style={linkStyle(location.pathname === "/registration")}
-      >
-        Registration
-      </Link>
-      <Link to="/login" style={linkStyle(location.pathname === "/login")}>
-        Login
-      </Link>
-      <Link
-        to="/partner-companies"
-        style={linkStyle(location.pathname === "/partner-companies")}
-      >
-        Partner Companies
-      </Link>
-      <Link to="/opportunities" style={linkStyle(location.pathname === "/opportunities")}>
-        Opportunities
-      </Link>
-      <Link to="/news" style={linkStyle(location.pathname === "/news")}>
-        News
-      </Link>
-
+    <div>
+      <Header />
       <Routes>
-        <Route path="login" Component={<Login />}/>
-      </Routes >
-
-    </nav>
-  );
+        <Route path="/" element={<Home />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/opportunities" element={<Opportunities />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/partnercompanies" element={<PartnerCompanies />} />
+        
+      </Routes>
+    </div>
+  )
 }
-
-export default MainNavbar;

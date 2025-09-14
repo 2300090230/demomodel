@@ -1,22 +1,42 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainNavbar from "./main/Navbar";
-import MainHome from "./main/Home";
-import ApplicantHome from "./applicant/ApplicantHome";
+// import React from 'react'
+// import { BrowserRouter } from 'react-router-dom'
+
+import Navbar from './main/Navbar'
+
+// export default function App() {
+//   return (
+//     <div>
+//       <BrowserRouter>
+
+//       <Navbar/>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+import { BrowserRouter } from "react-router-dom";
+import ApplicantNavbar from './applicant/ApplicantNavbar';
+import { AuthProvider, useAuth } from "./contextapi/AuthContext";
+
+function AppContent() {
+  const { isAppilicantLoggedIn } = useAuth();
+
+  return (
+    <BrowserRouter>
+     
+      {isAppilicantLoggedIn ? (
+        <ApplicantNavbar />
+      ) : (
+        <Navbar />
+      )}
+    </BrowserRouter>
+  );
+}
 
 function App() {
   return (
-    <Router>
-      <MainNavbar />
-      <Routes>
-        <Route path="/" element={<MainHome />} />
-        <Route path="/registration" element={<ApplicantHome />} />
-        <Route path="/login" element={<ApplicantHome />} />
-        <Route path="/partner-companies" element={<ApplicantHome />} />
-        <Route path="/opportunities" element={<ApplicantHome />} />
-        <Route path="/news" element={<ApplicantHome />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
