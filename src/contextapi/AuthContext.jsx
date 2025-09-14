@@ -4,11 +4,10 @@ import { createContext, useState, useContext, useEffect } from 'react';
 const AuthContext = createContext();
 
 // Provider component to manage login states and user data
-export function AuthProvider({ children }) 
-{
+export function AuthProvider({ children }) {
   // Load initial state from sessionStorage or default to false/null
-  const [isAppilicantLoggedIn, setIsAppilicantLoggedIn] = useState(() => {
-    return sessionStorage.getItem('isAppilicantLoggedIn') === 'true';
+  const [isApplicantLoggedIn, setIsApplicantLoggedIn] = useState(() => {
+    return sessionStorage.getItem('isApplicantLoggedIn') === 'true';
   });
 
   // Load applicant data from sessionStorage
@@ -19,8 +18,8 @@ export function AuthProvider({ children })
 
   // Save state to sessionStorage whenever it changes
   useEffect(() => {
-    sessionStorage.setItem('isAppilicantLoggedIn', isAppilicantLoggedIn);
-  }, [isAppilicantLoggedIn]);
+    sessionStorage.setItem('isApplicantLoggedIn', isApplicantLoggedIn);
+  }, [isApplicantLoggedIn]);
 
   // Save applicant data to sessionStorage whenever it changes
   useEffect(() => {
@@ -33,28 +32,26 @@ export function AuthProvider({ children })
 
   // Login function
   const loginApplicant = (applicantData) => {
-    setIsAppilicantLoggedIn(true);
+    setIsApplicantLoggedIn(true);
     setApplicant(applicantData);
-    sessionStorage.setItem('isAppilicantLoggedIn', 'true');
+    sessionStorage.setItem('isApplicantLoggedIn', 'true');
     sessionStorage.setItem('applicant', JSON.stringify(applicantData));
   };
 
   // Logout function
   const logoutApplicant = () => {
-    setIsAppilicantLoggedIn(false);
+    setIsApplicantLoggedIn(false);
     setApplicant(null);
-    sessionStorage.removeItem('isAppilicantLoggedIn');
+    sessionStorage.removeItem('isApplicantLoggedIn');
     sessionStorage.removeItem('applicant');
-    sessionStorage.clear(); // Clear all session storage
+    // ❌ removed sessionStorage.clear() because it wipes unrelated data
   };
 
   return (
     <AuthContext.Provider
       value={{
-        isAppilicantLoggedIn,
-        setIsAppilicantLoggedIn,
+        isApplicantLoggedIn,
         applicant,
-        setApplicant,
         loginApplicant,
         logoutApplicant
       }}

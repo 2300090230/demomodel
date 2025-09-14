@@ -36,8 +36,15 @@ function Login() {
       const response = await axios.post(`${config.url}/api/applicants/login`, formData);
       
       if (response.status === 200) {
-        // Use the AuthContext login function
-        loginApplicant(response.data);
+        console.log("Login response:", response.data);
+
+        // ✅ Fetch full applicant object using username after login
+        const userResponse = await axios.get(
+          `${config.url}/api/applicants/getuser/${formData.username}`
+        );
+
+        // Store applicant in context + sessionStorage
+        loginApplicant(userResponse.data);
         
         setMessage('Login successful! Welcome back to PM Internship Scheme.');
         setMessageType('success');
@@ -214,17 +221,6 @@ function Login() {
               </button>
             </div>
           </form>
-
-          {/* Test Login Button */}
-          <div className="mt-6">
-            <button
-              type="button"
-              onClick={handleTestLogin}
-              className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-6 rounded-lg font-medium transition-colors duration-200 border border-gray-300"
-            >
-              Use Test Credentials (johndoe / 12345)
-            </button>
-          </div>
 
           {/* Register Link */}
           <div className="mt-8 text-center">

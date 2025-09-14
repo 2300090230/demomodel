@@ -18,12 +18,12 @@ import ApplicantNavbar from './applicant/ApplicantNavbar';
 import { AuthProvider, useAuth } from "./contextapi/AuthContext";
 
 function AppContent() {
-  const { isAppilicantLoggedIn } = useAuth();
+  const { isApplicantLoggedIn } = useAuth();
 
   return (
     <BrowserRouter>
      
-      {isAppilicantLoggedIn ? (
+      {isApplicantLoggedIn ? (
         <ApplicantNavbar />
       ) : (
         <Navbar />

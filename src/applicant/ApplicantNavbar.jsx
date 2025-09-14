@@ -14,6 +14,7 @@ function ApplicantNavbar() {
 
   const handleLogout = () => {
     logoutApplicant();
+    sessionStorage.clear();
     navigate('/');
   };
 
